@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'women.apps.WomenConfig' # women - название приложения, apps - файл куда обращается settings, WomenConfig - название класса
 ]
 
 MIDDLEWARE = [

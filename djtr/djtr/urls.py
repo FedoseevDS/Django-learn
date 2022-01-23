@@ -14,8 +14,11 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include # добавил метод include, который делает переадресацию
+
+from women.views import * # импортирует все функции из файла views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', include('women.urls')), # "" - ссылка на главную страницу, http://127.0.0.1:8000/
 ]
