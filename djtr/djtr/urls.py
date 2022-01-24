@@ -22,3 +22,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('women.urls')), # "" - ссылка на главную страницу, http://127.0.0.1:8000/
 ]
+
+handler404 = pageNotFound # функция для обработки страницы сайта с ошибкой, функция находиться в views.py

@@ -1,9 +1,11 @@
 from django.urls import path
+from django.urls import re_path # регулярные выражения
 
 from .views import * # импортирую все функции представления из файла views
 
 urlpatterns = [
-    path('', index), # прописываем все маршруты текущего приложения
-    path('cats/', categories), # добавил дополнительную страницу http://127.0.0.1:8000/cats/
+    path('', index, name='home'), # присвоил имя главной странице
+    path('cats/<int:catid>/', categories), # показывает номера, слова категории при открытие страницы
+    re_path(r'^archive/(?P<year>[0-9]{4})/', archive), # archive - префикс, (?P<year>[0-9]{4}) - выводит год
 ]
 
