@@ -13,14 +13,19 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include # добавил метод include, который делает переадресацию
 
+from djtr import settings
 from women.views import * # импортирует все функции из файла views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('women.urls')), # "" - ссылка на главную страницу, http://127.0.0.1:8000/
 ]
+
+if settings.DEBUG: # DEBUG=True добавляем к URL префиксам статические файлы, работает только в отладочном режиме
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) # путь на settings/py
 
 handler404 = pageNotFound # функция для обработки страницы сайта с ошибкой, функция находиться в views.py
