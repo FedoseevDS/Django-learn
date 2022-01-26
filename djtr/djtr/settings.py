@@ -52,7 +52,7 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'djtr.urls'
 
-TEMPLATES = [
+TEMPLATES = [ # прописан путь к поиску шаблонов в папке temlates
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [],

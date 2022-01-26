@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render # метод для передачи шаблонов
 from django.shortcuts import redirect # переадресация редирект 301 и 302
 from django.http import HttpResponse # импортирую класс из библиотеки django
 from django.http import HttpResponseNotFound # функция по обработке ошибки 404
@@ -6,8 +6,13 @@ from django.http import Http404 # ?
 
 # Create your views here.
 
+menu = ['О сайте', 'Добавить статью', 'Обратная связь', 'Войти']
+
 def index(request): # HttpRequest - поступает запрос от пользоваетя
-    return HttpResponse('Страница приложения women.') # поступает ответ от сервера к пользователю
+    return render(request, 'women/index.html', {'menu': menu, 'title': 'Главная страница'}) # добавил список в словарь
+
+def about(request):
+    return render(request, 'women/about.html', {'menu': menu, 'about': 'О сайте'}) # добавил список в шаблон
 
 def categories(request, catid): # добавил 2 атрибут который будет показывать номер категории
     if request.GET: # условие если в GET есть данные то
