@@ -6,7 +6,7 @@ from django.http import Http404 # ?
 
 # Create your views here.
 
-menu = ['О сайте', 'Добавить статью', 'Обратная связь', 'Войти']
+menu = ['О сайте', 'Добавить статью', 'Обратная связь', 'Войти', 'Баракуда']
 
 def index(request): # HttpRequest - поступает запрос от пользоваетя
     return render(request, 'women/index.html', {'menu': menu, 'title': 'Главная страница'}) # добавил список в словарь
