@@ -3,13 +3,15 @@ from django.shortcuts import redirect # переадресация редире�
 from django.http import HttpResponse # импортирую класс из библиотеки django
 from django.http import HttpResponseNotFound # функция по обработке ошибки 404
 from django.http import Http404 # ?
+from .models import * # импортирует классы и функции из файла models.py
 
 # Create your views here.
 
-menu = ['О сайте', 'Добавить статью', 'Обратная связь', 'Войти', 'Баракуда']
+menu = ['О сайте', 'Добавить статью', 'Обратная связь', 'Войти',]
 
 def index(request): # HttpRequest - поступает запрос от пользоваетя
-    return render(request, 'women/index.html', {'menu': menu, 'title': 'Главная страница'}) # добавил список в словарь
+    posts = Women.objects.all() # показывает все статьи из таблицы SQL
+    return render(request, 'women/index.html', {'posts': posts, 'menu': menu, 'title': 'Главная страница'}) # добавил ключ posts
 
 def about(request):
     return render(request, 'women/about.html', {'menu': menu, 'about': 'О сайте'}) # добавил список в шаблон
