@@ -1,14 +1,16 @@
-{% extends 'women/base.html' %} <!-- -->
+{% extends 'women/base.html' %} <!-- берет шаблон из файла base -->
 
-{% block content %} <!-- -->
-<ul class="list-articles"> <!-- -->
-	{% for p in posts %} <!-- -->
-			<li><h2>{{p.title}}</h2> <!-- -->
-	{% autoescape on %} <!-- -->
-	{{p.content|linebreaks|truncatewords:50}} <!-- -->
-	{% endautoescape %} <!-- -->
-			<div class="clear"></div> <!-- -->
-			<p class="link-read-post"><a href="#">Читать пост</a></p> <!-- -->
+{% block content %} <!-- блок для редактирования страницы -->
+<ul class="list-articles"> <!-- тег маркированного списка -->
+	{% for p in posts %} <!-- цикл для перебора статей -->
+			<li><h2>{{p.title}}</h2> <!-- заголовок статей -->
+	{% autoescape on %} <!-- экранирование отображения html -->
+	<!-- linebreaks - заменяет разрывы строк в обычном тексте, truncatewords - обрезает строку после определенного количества слов -->
+	{{p.content|linebreaks|truncatewords:50}}
+	{% endautoescape %} <!-- обязательный закрывающий атрибут -->
+			<div class="clear"></div> <!-- тег блока -->
+			<!-- добавил ссылку на файл models.py, функцию get_absolute_url -->
+			<p class="link-read-post"><a href="{{ p.get_absolute_url }}">Читать пост</a></p>
 			</li>
 	{% endfor %}
 </ul>

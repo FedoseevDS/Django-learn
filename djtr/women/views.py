@@ -4,29 +4,39 @@ from django.http import HttpResponse # импортирую класс из би
 from django.http import HttpResponseNotFound # функция по обработке ошибки 404
 from django.http import Http404 # ?
 from .models import * # импортирует классы и функции из файла models.py
+from django.urls import reverse
 
 # Create your views here.
 
-menu = ['О сайте', 'Добавить статью', 'Обратная связь', 'Войти',]
+menu = [{'title': 'О сайте', 'url_name': 'about'},
+        {'title': 'Добавить статью', 'url_name': 'add_page'},
+        {'title': 'Обратная связь', 'url_name': 'contact'},
+        {'title': 'Войти', 'url_name': 'login'},
+] # добавил список ввиде словарей
 
 def index(request): # HttpRequest - поступает запрос от пользоваетя
     posts = Women.objects.all() # показывает все статьи из таблицы SQL
-    return render(request, 'women/index.html', {'posts': posts, 'menu': menu, 'title': 'Главная страница'}) # добавил ключ posts
+    context = { # добавил словарь чтобы все влазило на один экран
+        'posts': posts,
+        'menu': menu,
+        'title': 'Главная страница',
+    }
+    return render(request, 'women/index.html', context=context) # атрибут context - делает ссылку на словарь
 
 def about(request):
     return render(request, 'women/about.html', {'menu': menu, 'about': 'О сайте'}) # добавил список в шаблон
 
-def categories(request, catid): # добавил 2 атрибут который будет показывать номер категории
-    if request.GET: # условие если в GET есть данные то
-         print(request.GET) # выводится значение
+def addpage(request):
+    return HttpResponse('Добавление статьи')
 
-    return HttpResponse(f'<h1>Статьи по категориям</h1><p>{catid}</p>') # добавил <p> который будет показывать № категории
+def contact(request):
+    return HttpResponse('Обратная связь')
 
-def archive(request, year): # добавил атрибут года
-    if int(year) > 2020: # условие если год выше 2020
-        return redirect('home', permanent=True) # переадресация на страницу home. редирект 301 - постоянный
-
-    return HttpResponse(f'<h1>Архив по годам</h1><p>{year}</p>') # в префиксе страницы будет отображаться год
+def login(request):
+    return HttpResponse('Авторизация')
 
 def pageNotFound(request, exception): # exception - используется для обработки исключений
     return HttpResponseNotFound('<h1>Страница не найдена</h1>') # выводит сообщение, когда страница открыта с ошибкой
+
+def show_post(request, post_id):
+    return HttpResponse(f'Отображение статьи с id = {post_id}') # добавил представления для постов

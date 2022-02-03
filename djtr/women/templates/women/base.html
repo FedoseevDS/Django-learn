@@ -1,69 +1,74 @@
-{% load static %} <!-- -->
-<!DOCTYPE html> <!-- -->
-<html> <!-- -->
-<head> <!-- -->
-	<title>{{title}}</title> <!-- -->
-	<link type="text/css" href="{% static 'women/css/styles.css' %}" rel="stylesheet" /> <!-- -->
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"> <!-- -->
-	<link rel="shortcut icon" href="{% static 'women/images/main.ico' %}" type="image/x-icon"/> <!-- -->
-	<meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- -->
+{% load static %} <!-- подключаю директорию static -->
+<!DOCTYPE html> <!-- версия html, обязательный тег -->
+<html> <!-- обязательный тег -->
+<head> <!-- шапка -->
+	<title>{{title}}</title> <!-- название шапки в браузере -->
+	<!-- подключаю статические файлы -->
+	<link type="text/css" href="{% static 'women/css/styles.css' %}" rel="stylesheet" />
+	<!-- http-equiv - конвертирует залоговок в HTTP, content - значение атрибута, charset - кодировка сайта  -->
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<!-- shortcut icon - определяет подключаемый файл иконкой, href - ссылка, type - ? -->
+	<link rel="shortcut icon" href="{% static 'women/images/main.ico' %}" type="image/x-icon"/>
+	<!-- name - окно просмотра, content - устанавливает ширину девайса, initial-scale - коэффициент масштабирования -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
-<body> <!-- -->
-<table class="table-page" border=0 cellpadding="0" cellspacing="0"> <!-- -->
-<tr><td valign=top> <!-- -->
-{% block mainmenu %} <!-- -->
-		<div class="header"> <!-- -->
-			<ul id="mainmenu" class="mainmenu"> <!-- -->
-			<li class="logo"><a href="#"><div class="logo"></div></a></li> <!-- -->
-{% for m in menu %} <!-- -->
-	{% if not forloop.last %} <!-- -->
-			<li><a href="#">{{m.title}}</a></li> <!-- -->
-	{% else %} <!-- -->
-			<li class="last"><a href="#">{{m.title}}</a></li> <!-- -->
-	{% endif %} <!-- -->
-{% endfor %} <!-- -->
-			</ul> <!-- -->
-			<div class="clear"></div> <!-- -->
-		</div> <!-- -->
-{% endblock mainmenu %} <!-- -->
+<body> <!-- тело сайта -->
+<table class="table-page" border=0 cellpadding="0" cellspacing="0"> <!-- таблица, border - толщина рамки, -->
+<tr><td valign='top'> <!-- выравнивание по верхнему краю  -->
+{% block mainmenu %} <!-- создает блок в jinja2 -->
+		<div class="header"> <!-- тег блока -->
+			<ul id="mainmenu" class="mainmenu"> <!-- тег списка -->
+			<li class="logo"><a href="{% url 'home' %}"><div class="logo"></div></a></li> <!-- добавил ссылку на ГС -->
+{% for m in menu %} <!-- цикл -->
+	{% if not forloop.last %} <!-- условие если -->
+			<li><a href="{% url m.url_name %}">{{m.title}}</a></li> <!-- добавил ссылки через список на другие страницы -->
+	{% else %} <!-- если условия не выполняется -->
+			<li class="last"><a href="{% url m.url_name %}">{{m.title}}</a></li> <!-- если условие не выполняется -->
+	{% endif %} <!-- обязательный закрывающий атрибут -->
+{% endfor %} <!-- обязательный закрывающий атрибут -->
+			</ul> <!-- закрывающий тег маркированного списка -->
+			<div class="clear"></div> <!-- тег блока -->
+		</div> <!-- закрывающий тег -->
+{% endblock mainmenu %} <!-- обязательный закрывающий атрибут -->
 
 
-<table class="table-content" border=0 cellpadding="0" cellspacing="0"> <!-- -->
-<tr> <!-- -->
+<table class="table-content" border=0 cellpadding="0" cellspacing="0"> <!-- тег таблицы -->
+<tr> <!-- контейнер для создания строки таблицы -->
 <!-- Sidebar слева -->
-	<td valign="top" class="left-chapters"> <!-- -->
-	<ul id="leftchapters"> <!-- -->
-		<li class="selected">Все категории</li> <!-- -->
-		<li><a href="#">Актрисы</a></li> <!-- -->
-		<li><a href="#">Певицы</a></li> <!-- -->
-		<li><a href="#">Спортсменки</a></li> <!-- -->
-		<li class="share"> <!-- -->
-		<p>Наш канал</p> <!-- -->
+	<td valign="top" class="left-chapters"> <!-- ячейка строки в таблице -->
+	<ul id="leftchapters"> <!-- маркированный список -->
+		<li class="selected">Все категории</li> <!-- элемент списка -->
+		<li><a href="#">Актрисы</a></li> <!-- элемент списка и атрибут ссылки -->
+		<li><a href="#">Певицы</a></li> <!-- элемент списка и атрибут ссылки -->
+		<li><a href="#">Спортсменки</a></li> <!-- элемент списка и атрибут ссылки -->
+		<li class="share"> <!-- элемент списка -->
+		<p>Наш канал</p> <!-- тег абзаца -->
+		<!-- ссылка на ютуб канал -->
 		<a class="share-yt" href="https://www.youtube.com/channel/UClJzWfGWuGJL2t-3dYKcHTA/playlists" target="_blank" rel="nofollow"></a>
 		</li>
 	</ul>
 </td>
 <!-- Конец Sidebar'а -->
-<td valign="top" class="content"> <!-- -->
+<td valign="top" class="content"> <!-- ячейка строки в таблице -->
 	<!-- Хлебные крошки -->
-	{% block breadcrumbs %} <!-- -->
-	{% endblock %} <!-- -->
+	{% block breadcrumbs %} <!--  -->
+	{% endblock %} <!-- обязательный закрывающий атрибут -->
 
 <!-- Блок контента -->
-	<div class="content-text"> <!-- -->
-{% block content %} <!-- -->
-{% endblock %} <!-- -->
+	<div class="content-text"> <!-- тег блока -->
+{% block content %} <!-- блок для редактирования шаблона -->
+{% endblock %} <!-- обязательный закрывающий атрибут -->
 	</div>
 <!-- Конец блока контента -->
 
 </td></tr></table> <!-- -->
 </td></tr> <!-- -->
 <!-- Footer -->
-<tr><td valign=top> <!-- -->
-	<div id="footer"> <!-- -->
+<tr><td valign=top> <!-- элемент таблицы -->
+	<div id="footer"> <!-- тег блока -->
 		<p>&copy; 2021 Частичное или полное копирование информации с данного сайта для распространения на других ресурсах, в том числе и бумажных, строго запрещено.</p>
 	</div>
-</td></tr></table> <!-- -->
+</td></tr></table> <!-- элемент таблицы -->
 <!-- Конец footer'а и страницы -->
 </body>
 </html>

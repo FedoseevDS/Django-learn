@@ -12,424 +12,425 @@ a {
 	text-decoration: none; /* убирает подчеркивания цвета */
 }
 
-a:hover { /*  */
+a:hover { /* hover - определяет стиль при наведении элемента  */
 	color: #CC0000; /* цвет */
-	text-decoration: underline; /* */
+	text-decoration: underline; /* делает текст подчеркнутым */
 }
 
-img {
-max-width: 600px;
-height: auto; /* */
+img { /* тег */
+max-width: 600px; /* максимальная ширина*/
+height: auto; /* высота */
 }
 
-img.img-article-left { /* */
-	max-width: 300px; /* */
-	height: auto; /* */
-	float: left; /* */
-	padding: 0 10px 10px 0; /* */
+img.img-article-left { /* НЕ МОГУ НАЙТИ */
+	max-width: 300px; /* максимальная ширина */
+	height: auto; /* высота */
+	float: left; /* расположение с левой стороны */
+	padding: 0 10px 10px 0; /* отступ с внутренней стороны */
 }
 
-img.img-article-left.thumb { /* */
-	max-width: 150px; /* */
-	height: auto; /* */
+img.img-article-left.thumb { /* НЕ МОГУ НАЙТИ */
+	max-width: 150px; /* максимальная ширина */
+	height: auto; /* высота */
 }
 
 p.link-read-post { /* */
-	text-align: right; /* */
+	text-align: right; /* выравнивание текста с правой стороны */
 }
 
 p.link-read-post a { /* */
-	padding: 10px; /* */
-	min-width: 100px; /* */
-	background: #333671; /* */
-	color: #fff; /* */
-	text-decoration: none; /* */
+	padding: 10px; /* отступ с внутренней стороны */
+	min-width: 100px; /* минимальная ширина */
+	background: #333671; /* задний фон */
+	color: #fff; /* цвет */
+	text-decoration: none; /* отменяет все эффекты в тексте */
 }
 
 div.article-panel { /* */
-    background: #eee; /* */
-    padding: 5px 10px 5px 10px; /* */
-    box-sizing: border-box; /* */
-    overflow: hidden; /* */
-    color: #555; /* */
+    background: #eee; /* задний фон */
+    padding: 5px 10px 5px 10px; /* отступ с внутренней стороны */
+    box-sizing: border-box; /* включают в себя значение полей и границ width and height */
+    overflow: hidden; /* показывает область внутри элемента */
+    color: #555; /* цвет */
 }
 
 div.article-panel p.first { /* */
-    margin: 0; /* */
-    float: left; /* */
+    margin: 0; /* внешний отступ */
+    float: left; /* расположение блока с левой стороны */
 }
+
 div.article-panel p.last { /* */
-    margin: 0; /* */
-    float: right; /* */
+    margin: 0; /* внешний отступ */
+    float: right; /* расположение блока с правой стороны */
 }
 
 ul.list-articles { /* */
-	list-style: none; /* */
-	margin: 0; /* */
-	padding: 0; /* */
+	list-style: none; /* убирает маркеры списка */
+	margin: 0; /* внешний отступ */
+	padding: 0; /* внутренний отступ */
 }
 
 ul.list-articles li { /* */
-	border-bottom: 1px solid #ccc; /* */
+	border-bottom: 1px solid #ccc; /* выделение на нижней границе */
 }
 
 .table-page { /* */
-	width: 100%; /* */
-	height: 100%; /* */
-	vertical-align: top; /* */
+	width: 100%; /* ширина */
+	height: 100%; /* высота */
+	vertical-align: top; /* выравнивание по верхнему краю */
 }
 
-.table-page tr {height: 100%;} /* */
+.table-page tr {height: 100%;} /* высота */
 
-.clear {clear: both;} /* */
+.clear {clear: both;} /* отменяет обтекание с права и лева */
 
 .header { /* */
-	background: #3F4137; /* */
-	height: 60px; /* */
+	background: #3F4137; /* задний фон */
+	height: 60px; /* высота */
 }
 
 .logo { /* */
-	background: url('../images/logo.png') no-repeat 10px 5px; /* */
-	width: 70px; /* */
-	height: 60px; /* */
+	background: url('../images/logo.png') no-repeat 10px 5px; /* задний фон */
+	width: 70px; /* ширина */
+	height: 60px; /* высота */
 }
 
 ul.mainmenu { /* */
-	list-style: none; /* */
-	margin: 0; /* */
-	padding: 0; /* */
-	height: 60px; /* */
-	color: #fdc073; /* */
-	font-size: 20px; /* */
-	overflow: hidden; /* */
+	list-style: none; /* убираем маркеры списка */
+	margin: 0; /* внешний отступ */
+	padding: 0; /* внутренний отступ */
+	height: 60px; /* высота */
+	color: #fdc073; /* цвет */
+	font-size: 20px; /* размер шрифта */
+	overflow: hidden; /* отображается область внутри элемента */
 }
 
 ul.mainmenu li { /* */
-	float: left; /* */
-	margin: 18px 40px 0 30px; /* */
+	float: left; /* определяет расположение элемента, другие элементы будут обтекать его с другой стороны */
+	margin: 18px 40px 0 30px; /* внешний отступ */
 }
 
-ul.mainmenu li.logo {margin: 0;} /* */
-ul.mainmenu li.last {float: right;} /* */
+ul.mainmenu li.logo {margin: 0;} /* внешний отступ */
+ul.mainmenu li.last {float: right;} /* расположение элемента */
 
 ul.mainmenu li a { /* */
-	color: #fdc073; /* */
-	text-decoration: none; /* */
+	color: #fdc073; /* цвет */
+	text-decoration: none; /* убирает все эффекты текста */
 }
 
 ul.mainmenu li a:hover { /* */
-	color: #FDA83D; /* */
+	color: #FDA83D; /* цвет */
 }
 
 .panelitems { /* */
-	text-align: center; /* */
+	text-align: center; /* выравнивает текст по центру */
 }
 
 ul.langitem { /* */
-	list-style: none; /* */
-	display: inline-block; /* */
-	margin: 30px; /* */
-	padding: 0; /* */
-	max-width: 300px /* */
+	list-style: none; /* убирает маркировку списка */
+	display: inline-block; /* генерирует блочный элемент */
+	margin: 30px; /* внешний отступ */
+	padding: 0; /* внутренний отступ */
+	max-width: 300px /* максимальная ширина */
 }
 
 ul.langitem li { /* */
-	margin: 10px 0 0 0; /* */
-	width: 100%; /* */
+	margin: 10px 0 0 0; /* внешний отступ */
+	width: 100%; /* ширина */
 }
 
 ul.langitem li.image { /* */
-	margin: 0; /* */
-	text-align: center; /* */
-	width: 100%; /* */
-	height: 250px; /* */
-	overflow: hidden; /* */
+	margin: 0; /* внешний отступ */
+	text-align: center; /* выравнивание текста по центру */
+	width: 100%; /* ширина */
+	height: 250px; /* высота */
+	overflow: hidden; /* отображается область внутри элемента, остальное будет скрыто */
 }
 
 ul.langitem li.descr { /* */
-	color: #777; /* */
-	height: 170px; /* */
-	overflow: hidden; /* */
+	color: #777; /* цвет */
+	height: 170px; /* высота */
+	overflow: hidden; /* отображается область внутри элемента */
 }
 
 ul.langitem li a { /* */
-	color: #fdc073; /* */
-	text-decoration: none; /* */
-	font-size: 20px; /* */
+	color: #fdc073; /* цвет */
+	text-decoration: none; /* убирает все эффекты текста */
+	font-size: 20px; /* размер шрифта */
 }
 
 ul.langitem li a:hover { /* */
-	color: #FDA83D; /* */
+	color: #FDA83D; /* цвет */
 }
 
 div.button { /* */
-	background: #3F4137; /* */
-	max-width: 200px; /* */
-	margin: 0 auto; /* */
-	padding: 5px 20px 5px 20px; /* */
-	border-radius: 10px; /* */
-	font-size: 20px; /* */
+	background: #3F4137; /* задний фон */
+	max-width: 200px; /* максимальная ширина */
+	margin: 0 auto; /* внешний отступ */
+	padding: 5px 20px 5px 20px; /* внутренний отступ */
+	border-radius: 10px; /* радиус углов */
+	font-size: 20px; /* размер шрифта */
 }
 
 .table-content { /* */
-	width: 100%; /* */
-	min-height: 100%; /* */
-	height: 100%; /* */
+	width: 100%; /* ширина */
+	min-height: 100%; /* минимальная высота */
+	height: 100%; /* высота */
 }
 
 .left-chapters { /* */
-	margin: 0; /* */
-	background: #eee; /* */
-	border-right: 1px solid #ccc; /* */
-	min-height: 100%; /* */
+	margin: 0; /* внешний отступ */
+	background: #eee; /* задний фон */
+	border-right: 1px solid #ccc; /* граница с правой стороны */
+	min-height: 100%; /* минимальная высота */
 }
 
 .left-chapters ul { /* */
-	width: 230px; /* */
-	min-height: 100%; /* */
-	margin: 0; /* */
-	padding: 20px 10px 10px 20px; /* */
-	list-style: none; /* */
-	font-size: 20px; /* */
+	width: 230px; /* ширина */
+	min-height: 100%; /* минимальная ширина */
+	margin: 0; /* внешний отступ */
+	padding: 20px 10px 10px 20px; /* внутренний отступ */
+	list-style: none; /* убирает стили списка */
+	font-size: 20px; /* размер шрифта */
 }
 
 .left-chapters ul li { /* */
-	margin: 30px 0 0 0; /* */
-	color: #999; /* */
+	margin: 30px 0 0 0; /* внешний отступ */
+	color: #999; /* цвет */
 }
 
-.left-chapters ul li.selected {color: #0059b2; } /* */
+.left-chapters ul li.selected {color: #0059b2; } /* цвет */
 .left-chapters ul li a { /* */
-	color: #444; /* */
-	text-decoration: none; /* */
+	color: #444; /* цвет */
+	text-decoration: none; /* убирает все эффекты */
 }
 
-.left-chapters ul li a:hover { color: #CC0000; } /* */
-.left-chapters ul li.share {margin: 60px 0 0 0;} /* */
-.left-chapters ul li.share p {margin: 30px 0 30px 0;} /* */
+.left-chapters ul li a:hover { color: #CC0000; } /* цвет */
+.left-chapters ul li.share {margin: 60px 0 0 0;} /* внешний отступ */
+.left-chapters ul li.share p {margin: 30px 0 30px 0;} /* внешний отступ */
 .left-chapters ul li.share a { /* */
-	display: inline-block; /* */
-	width: 40px; /* */
-	height: 40px; /* */
-	margin: 0 20px 0 0; /* */
+	display: inline-block; /* делает элемент блочным */
+	width: 40px; /* ширина */
+	height: 40px; /* высота */
+	margin: 0 20px 0 0; /* внешний отступ */
 }
 
 .left-chapters ul li.share a.share-yt { /* */
-	width: 100%; /* */
-	height: 30px; /* */
-	background: url('../images/share_yt.png') no-repeat 0 0 /* */
+	width: 100%; /* ширина */
+	height: 30px; /* высота */
+	background: url('../images/share_yt.png') no-repeat 0 0 /* задний фон */
 }
 
 .left-chapters ul li.share a.share-yt:hover { /* */
-	width: 100%; /* */
-	height: 30px; /* */
-	background: url('../images/share_yt.png') no-repeat 0 -30px /* */
+	width: 100%; /* ширина */
+	height: 30px; /* высота */
+	background: url('../images/share_yt.png') no-repeat 0 -30px /* задний фон */
 }
 
 .content { /* */
-	padding: 40px 20px 20px 40px; /* */
-	width: 100%; /* */
-	box-sizing: border-box; /* */
+	padding: 40px 20px 20px 40px; /* внутренний отступ */
+	width: 100%; /* ширина */
+	box-sizing: border-box; /* включает в себя размер границ ширины и высоты */
 }
 
 ul.breadcrumbs { /* */
-	margin: 0; /* */
-	padding: 0; /* */
-	list-style: none; /* */
-	font-size: 20px; /* */
-	font-family: Sans-serif, Arial, Tahoma; /* */
+	margin: 0; /* внешний отступ */
+	padding: 0; /* внутренний отступ */
+	list-style: none; /* убирает маркировку списка */
+	font-size: 20px; /* размер шрифта */
+	font-family: Sans-serif, Arial, Tahoma; /* устанавливает шрифт текста */
 }
 
 ul.breadcrumbs li { /* */
-	display: inline-block; /* */
+	display: inline-block; /* делает элемент блочным */
 }
 
 ul.breadcrumbs li a { /* */
-	color: #0059b2; /* */
-	text-decoration: none; /* */
+	color: #0059b2; /* цвет */
+	text-decoration: none; /* убирает все эффекты текста */
 }
 
-ul.breadcrumbs li a:hover { color: #CC0000; } /* */
+ul.breadcrumbs li a:hover { color: #CC0000; } /* цвет */
 ul.breadcrumbs li:after{ /* */
-	padding: 0 10px 0 10px; /* */
-	content: "\2192"; /* */
+	padding: 0 10px 0 10px; /* внутренний отступ */
+	content: "\2192"; /* текст добавляется на страницу */
 }
 
-ul.breadcrumbs li.last:after {content: "";} /* */
+ul.breadcrumbs li.last:after {content: "";} /* текст который добавляется на страницу */
 
 ul.control { /* */
-	margin: 0; /* */
-	padding: 60px 0 0 0; /* */
-	list-style: none; /* */
-	font-family: Sans-serif, Arial, Tahoma; /* */
-	font-size: 18px; /* */
-	width: 100%; /* */
+	margin: 0; /* внешний отступ */
+	padding: 60px 0 0 0; /* внутренний отступ */
+	list-style: none; /* убирает маркировку списка */
+	font-family: Sans-serif, Arial, Tahoma; /* шрифт сайта */
+	font-size: 18px; /* размер шрифта */
+	width: 100%; /* ширина */
 }
 
-ul.control li {	float: left; padding: 0 0 0 10px;} /* */
-ul.control li.first:before {content: "\2190"; padding: 0 10px 0 0;} /* */
-ul.control li.last {float: right; padding: 0 40px 0 0;} /* */
-ul.control li.last:after {content: "\2192"; padding: 0 0 0 10px;} /* */
-ul.control li a { color: #0059b2; text-decoration: none; } /* */
-ul.control li a:hover { color: #CC0000; } /* */
+ul.control li {	float: left; padding: 0 0 0 10px;} /* расположение слева, внутренний отступ */
+ul.control li.first:before {content: "\2190"; padding: 0 10px 0 0;} /* текст, внутренний отступ */
+ul.control li.last {float: right; padding: 0 40px 0 0;} /* расположение справа, внутренний отступ */
+ul.control li.last:after {content: "\2192"; padding: 0 0 0 10px;} /* текст, внутренний отступ */
+ul.control li a { color: #0059b2; text-decoration: none; } /* цвет, убирает все эффекти текста */
+ul.control li a:hover { color: #CC0000; } /* цвет */
 
 ul.content-table { /* */
-	margin: 0; /* */
-	padding: 60px 0 0 30px; /* */
-	list-style: none; /* */
-	font-family: Sans-serif, Arial, Tahoma; /* */
-	font-size: 28px; /* */
+	margin: 0; /* внешний отступ */
+	padding: 60px 0 0 30px; /* внутренний отступ */
+	list-style: none; /* убирает маркировку списка */
+	font-family: Sans-serif, Arial, Tahoma; /* шрифт сайта */
+	font-size: 28px; /* размер текста */
 }
 
 ul.content-table li { /* */
-	margin: 0 0 40px 0; /* */
+	margin: 0 0 40px 0; /* внешний отступ */
 }
 
 ul.content-table li a { /* */
-	color: #BB5715; /* */
-	text-decoration: none; /* */
+	color: #BB5715; /* цвет */
+	text-decoration: none; /* убирает все эффекты */
 }
 
-ul.content-table li a:hover {color: #F0711C;} /* */
+ul.content-table li a:hover {color: #F0711C;} /* цвет */
 
 .content-text { /* */
-	margin: 60px 0 0 30px; /* */
-	color: #000; /* */
-	font-size: 20px; /* */
-	font-family: Yandex Sans Display Light; /* */
+	margin: 60px 0 0 30px; /* внешний отступ */
+	color: #000; /* цвет */
+	font-size: 20px; /* размер текста */
+	font-family: Yandex Sans Display Light; /* шрифт текста */
 }
 
-.content-text h1 {font-size: 32px;} /* */
+.content-text h1 {font-size: 32px;} /* размер текста */
 
 ul.lang-list { /* */
-	list-style: none; /* */
-	margin: 0; /* */
-	padding: 14px 0 0 0; /* */
-	background: #3F4137; /* */
-	width: 100%; /* */
-	height: 50px; /* */
-	border-top: 1px solid #959A82; /* */
-	box-sizing: border-box; /* */
-	font-size: 18px; /* */
-	font-family: Sans-serif, Arial, Tahoma; /* */
+	list-style: none; /* убирает маркировку списка */
+	margin: 0; /* внешний отступ */
+	padding: 14px 0 0 0; /* внутренний отступ */
+	background: #3F4137; /* цвет заднего фона */
+	width: 100%; /* ширина */
+	height: 50px; /* высота */
+	border-top: 1px solid #959A82; /* параметры границы с вверху */
+	box-sizing: border-box; /* размер нижней части */
+	font-size: 18px; /* размер шрифта */
+	font-family: Sans-serif, Arial, Tahoma; /* шрифт текста */
 }
 
 ul.lang-list li { /* */
-	display: inline-block; /* */
-	margin-left: 40px; /* */
+	display: inline-block; /* делает элемент блочным */
+	margin-left: 40px; /* внешний отступ слева */
 }
 
-ul.lang-list li.selected {color: #fdc073; border-bottom: 1px solid #fdc073;} /* */
+ul.lang-list li.selected {color: #fdc073; border-bottom: 1px solid #fdc073;} /* цвет, нижняя граница */
 ul.lang-list li a { /* */
-	color: #eee; /* */
-	text-decoration: none; /* */
+	color: #eee; /* цвет */
+	text-decoration: none; /* убирает все эффекты */
 }
 
-ul.lang-list li a:hover {color: #fdc073;} /* */
+ul.lang-list li a:hover {color: #fdc073;} /* цвет */
 
-.topic-subject .topic-line { /* */
-	border-bottom: 1px solid #CC0000; /* */
-	margin-top: -16px; /* */
+.topic-subject .topic-line { /*  */
+	border-bottom: 1px solid #CC0000; /* нижняя граница */
+	margin-top: -16px; /* отступ с вверху */
 }
 
 .topic-subject .topic-text { /* */
-	display: inline-block; /* */
-	font-size: 28px; /* */
-	color: #777; /* */
-	padding: 0 10px 0 10px; /* */
-	margin-left: 30px; /* */
-	background: #fff; /* */
-	font-family: Sans-serif, Arial, Tahoma; /* */
+	display: inline-block; /* делает элемент блочным */
+	font-size: 28px; /* размер шрифта */
+	color: #777; /* цвет */
+	padding: 0 10px 0 10px; /* внутренний отступ */
+	margin-left: 30px; /* внешний отступ слева */
+	background: #fff; /* цвет заднего фона */
+	font-family: Sans-serif, Arial, Tahoma; /* выбор стиля для текста */
 }
 
 .list-topic { /* */
-	margin: 40px 0 60px 0; /* */
-	font-family: Sans-serif, Arial, Tahoma; /* */
+	margin: 40px 0 60px 0; /* внешний отступ */
+	font-family: Sans-serif, Arial, Tahoma; /* стиль текста */
 }
 
 .list-topic p { /* */
-	margin: 0; /* */
-	font-size: 28px; /* */
+	margin: 0; /* внешний отступ */
+	font-size: 28px; /* размер шрифта */
 }
 
 .list-topic ol { /* */
-	columns: 2; /* */
-	-webkit-columns: 2; /* */
+	columns: 2; /* 2 столбца */
+	-webkit-columns: 2; /*  */
 	column-gap: 40px; /* */
 }
 
 .list-topic ol li { /* */
-	display: list-item; /* */
-	margin: 10px 10px 0 0px; /* */
-	padding: 0 0 0 10px; /* */
+	display: list-item; /* элемент становиться блочный, список маркируется */
+	margin: 10px 10px 0 0px; /* внешний отступ */
+	padding: 0 0 0 10px; /* внутренний отступ */
 }
 
 .list-topic ol li a { /* */
-	color: #0059b2; /* */
-	text-decoration: none; /* */
+	color: #0059b2; /* цвет */
+	text-decoration: none; /* убирает эффекты с текста */
 }
 
-.list-topic ol li a:hover {color: #CC0000;} /* */
+.list-topic ol li a:hover {color: #CC0000;} /* цвет */
 
 .highlight { /* */
-	max-width: 350px; /* */
-	padding: 0 10px 0 10px; /* */
-	margin: 0; /* */
-	overflow: auto; /* */
-	overflow-y: hidden; /* */
-	background: #f0f0f0; /* */
+	max-width: 350px; /* максимальная ширина */
+	padding: 0 10px 0 10px; /* внутренний отступ */
+	margin: 0; /* внешний отступ */
+	overflow: auto; /* автоматически добавляются полосы прокрутки */
+	overflow-y: hidden; /*  */
+	background: #f0f0f0; /* цвет заднего фона */
 }
 
-.highlight p { margin: 0; } /* */
+.highlight p { margin: 0; } /* внешний отступ */
 .highlight .block { /* */
-	width: 100%; /* */
-	margin: 0; /* */
+	width: 100%; /* ширина */
+	margin: 0; /* внешний отступ */
 }
 
-.highlight .block p { margin: 0; } /* */
+.highlight .block p { margin: 0; } /* внешний отступ */
 
 .quote { /* */
-	background: url('../images/blockquote.png') no-repeat 0 10px; /* */
-	padding: 5px 5px 5px 70px; /* */
-	font-family: Sans-serif, Arial, Tahoma; /* */
-	font-style: italic; /* */
+	background: url('../images/blockquote.png') no-repeat 0 10px; /* цвет заднего фона */
+	padding: 5px 5px 5px 70px; /* внутренний отступ */
+	font-family: Sans-serif, Arial, Tahoma; /* стиль текста */
+	font-style: italic; /* текст будет подноклоном */
 }
 
 #footer { /* */
-	box-sizing: border-box; /* */
+	box-sizing: border-box; /* включают в себя значение полей и границ (ширина и высота) */
 
-	background: #3F4137; /* */
-	padding: 5px; /* */
-	color: #aaa; /* */
-	font-size: 14px; /* */
-	font-family: Verdana, Geneva, Arial, Helvetica; /* */
-	text-align: left; /* */
-	overflow: hidden; /* */
+	background: #3F4137; /* цвет заднего фона */
+	padding: 5px; /* внутренний отступ */
+	color: #aaa; /* цвет */
+	font-size: 14px; /* размер шрифта */
+	font-family: Verdana, Geneva, Arial, Helvetica; /* стиль текста */
+	text-align: left; /* расположение текста с левой стороны */
+	overflow: hidden; /* видно только, что находиться внутри элемента */
 }
 
 #footer a { /* */
-	text-decoration: underline; /* */
-	color: #aaa; /* */
+	text-decoration: underline; /* делает подчеркивание текста */
+	color: #aaa; /* цвет */
 }
 
 .form-input { /* */
-    width: 300px; /* */
-    font-size: 16px; /* */
+    width: 300px; /* ширина */
+    font-size: 16px; /* размер шрифта */
 }
 
 .form-label { /* */
-    display: inline-block; /* */
-    min-width: 150px; /* */
-    vertical-align: top; /* */
+    display: inline-block; /* делает элемент блочным */
+    min-width: 150px; /* минимальная ширина */
+    vertical-align: top; /* вертикальное расположение сверху */
 }
 
 .form-error ul { /* */
-    list-style: none; /* */
-    padding: 0; /* */
-    color: #CC0000; /* */
+    list-style: none; /* убирает маркировку списка */
+    padding: 0; /* внутренний отступ */
+    color: #CC0000; /* цвет */
 }
 
 .form-button { /* */
-    min-width: 200px; /* */
-    font-size: 16px; /* */
+    min-width: 200px; /* минимальная ширина */
+    font-size: 16px; /* размер шрифта */
 }
