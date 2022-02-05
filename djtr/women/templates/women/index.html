@@ -3,7 +3,16 @@
 {% block content %} <!-- блок для редактирования страницы -->
 <ul class="list-articles"> <!-- тег маркированного списка -->
 	{% for p in posts %} <!-- цикл для перебора статей -->
-			<li><h2>{{p.title}}</h2> <!-- заголовок статей -->
+			<li><div class="article-panel">
+	<p class="first">Категория: {{p.cat}}</p> <!-- создал обращение к class Category -->
+	<p class="Last">Дата: {{p.time_update|date:'d-m-Y H:i:s'}}</p> <!-- формирует дату и время -->
+</div>
+
+{% if p.photo %} <!-- если поля содержит фото -->
+	<p><img class="img-article-left thumb" src="{{p.photo.url}}"></p> <!-- отображаем по атрибуту фото и берем у него атрибут url -->
+{% endif %}
+
+				<h2>{{p.title}}</h2> <!-- заголовок статей -->
 	{% autoescape on %} <!-- экранирование отображения html -->
 	<!-- linebreaks - заменяет разрывы строк в обычном тексте, truncatewords - обрезает строку после определенного количества слов -->
 	{{p.content|linebreaks|truncatewords:50}}

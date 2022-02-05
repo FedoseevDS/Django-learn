@@ -16,10 +16,14 @@ menu = [{'title': 'О сайте', 'url_name': 'about'},
 
 def index(request): # HttpRequest - поступает запрос от пользоваетя
     posts = Women.objects.all() # показывает все статьи из таблицы SQL
+    cats = Category.objects.all() # показывает категории из SQL
+
     context = { # добавил словарь чтобы все влазило на один экран
         'posts': posts,
+        'cats': cats, #
         'menu': menu,
         'title': 'Главная страница',
+        'cat_selected': 0, #
     }
     return render(request, 'women/index.html', context=context) # атрибут context - делает ссылку на словарь
 
@@ -40,3 +44,20 @@ def pageNotFound(request, exception): # exception - используется д�
 
 def show_post(request, post_id):
     return HttpResponse(f'Отображение статьи с id = {post_id}') # добавил представления для постов
+
+def show_category(request, cat_id):
+    posts = Women.objects.filter(cat_id=cat_id) # выбираем посты, которые соответствуют текущей рубрике
+    cats = Category.objects.all() # выбираем рубрики для отображения на странице
+
+    if len(posts) == 0:
+        raise Http404() # если категория не будет найдена, будет выводиться ошибка
+
+    context = {
+        'posts': posts,
+        'cats': cats,
+        'menu': menu,
+        'title': 'Отображение по рубрикам',
+        'cat_selected': cat_id,
+    }
+
+    return render(request, 'women/index.html', context=context) #
