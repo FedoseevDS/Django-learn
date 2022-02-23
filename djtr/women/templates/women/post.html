@@ -1,0 +1,11 @@
+{% extends 'women/base.html' %} <!-- добавляю страницу базового шаблона -->
+
+{% block content %} <!-- заполняю блок контент -->
+<h1>{{ post.title }}</h1> <!-- передаю параметр из функцию show_post -->
+
+{% if post.photo %} <!-- передаю параметр из функцию show_post -->
+<p><img class="img-article-left" src="{{ post.photo.url }}"></p> <!--  -->
+{% endif %} <!-- закрывающий тег -->
+
+{{ post.content|linebreaks }} <!-- передаю параметр и добавляю обработчик для текста -->
+{% endblock %} <!-- закрывающий тег -->
