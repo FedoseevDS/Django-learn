@@ -48,30 +48,21 @@ p.link-read-post a { /* */
 
 div.article-panel { /* */
     background: #eee; /* задний фон */
-    padding: 5px 10px 5px 10px; /* отступ с внутренней стороны */
-    box-sizing: border-box; /* включают в себя значение полей и границ width and height */
-    overflow: hidden; /* показывает область внутри элемента */
     color: #555; /* цвет */
+
 }
 
-div.article-panel p.first { /* */
-    margin: 0; /* внешний отступ */
-    float: left; /* расположение блока с левой стороны */
-}
-
-div.article-panel p.last { /* */
-    margin: 0; /* внешний отступ */
-    float: right; /* расположение блока с правой стороны */
+div.article-panel p {
+    display: inline-block;
+    width: 47%;
+    padding: 1%;
+    font-size: 25px;
 }
 
 ul.list-articles { /* */
 	list-style: none; /* убирает маркеры списка */
 	margin: 0; /* внешний отступ */
 	padding: 0; /* внутренний отступ */
-}
-
-ul.list-articles li { /* */
-	border-bottom: 1px solid #ccc; /* выделение на нижней границе */
 }
 
 .table-page { /* */
@@ -85,12 +76,13 @@ ul.list-articles li { /* */
 .clear {clear: both;} /* отменяет обтекание с права и лева */
 
 .header { /* */
-	background: #3F4137; /* задний фон */
+	background: #eee; /* задний фон */
 	height: 60px; /* высота */
+	border-bottom: 2px solid;
 }
 
 .logo { /* */
-	background: url('../images/logo.png') no-repeat 10px 5px; /* задний фон */
+	background: url('../images/logo4.jpg') no-repeat 10px 5px; /* задний фон */
 	width: 70px; /* ширина */
 	height: 60px; /* высота */
 }
@@ -100,8 +92,8 @@ ul.mainmenu { /* */
 	margin: 0; /* внешний отступ */
 	padding: 0; /* внутренний отступ */
 	height: 60px; /* высота */
-	color: #fdc073; /* цвет */
-	font-size: 20px; /* размер шрифта */
+	color: black; /* цвет */
+	font-size: 23px; /* размер шрифта */
 	overflow: hidden; /* отображается область внутри элемента */
 }
 
@@ -114,12 +106,12 @@ ul.mainmenu li.logo {margin: 0;} /* внешний отступ */
 ul.mainmenu li.last {float: right;} /* расположение элемента */
 
 ul.mainmenu li a { /* */
-	color: #fdc073; /* цвет */
+	color: black; /* цвет */
 	text-decoration: none; /* убирает все эффекты текста */
 }
 
 ul.mainmenu li a:hover { /* */
-	color: #FDA83D; /* цвет */
+	color: #CC0000; /* цвет */
 }
 
 .panelitems { /* */
@@ -181,12 +173,12 @@ div.button { /* */
 .left-chapters { /* */
 	margin: 0; /* внешний отступ */
 	background: #eee; /* задний фон */
-	border-right: 1px solid #ccc; /* граница с правой стороны */
+	border-right: 2px solid; /* граница с правой стороны */
 	min-height: 100%; /* минимальная высота */
 }
 
 .left-chapters ul { /* */
-	width: 230px; /* ширина */
+	width: 180px; /* ширина */
 	min-height: 100%; /* минимальная ширина */
 	margin: 0; /* внешний отступ */
 	padding: 20px 10px 10px 20px; /* внутренний отступ */
@@ -294,7 +286,7 @@ ul.content-table li a { /* */
 ul.content-table li a:hover {color: #F0711C;} /* цвет */
 
 .content-text { /* */
-	margin: 60px 0 0 30px; /* внешний отступ */
+	margin: 30px 0 0 30px; /* внешний отступ */
 	color: #000; /* цвет */
 	font-size: 20px; /* размер текста */
 	font-family: Yandex Sans Display Light; /* шрифт текста */
