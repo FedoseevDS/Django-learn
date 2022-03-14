@@ -4,6 +4,8 @@ from django.shortcuts import redirect # переадресация редире�
 from django.http import HttpResponse # импортирую класс из библиотеки django
 from django.http import HttpResponseNotFound # функция по обработке ошибки 404
 from django.http import Http404 # ?
+
+from .forms import * # импортировал все модели из файла forms.py
 from .models import * # импортирует классы и функции из файла models.py
 from django.urls import reverse
 
@@ -30,7 +32,8 @@ def about(request):
     return render(request, 'women/about.html', {'menu': menu, 'about': 'О сайте'}) # добавил список в шаблон
 
 def addpage(request):
-    return HttpResponse('Добавление статьи')
+    form = AddPostForm() # добавил модель в шаблон addpage
+    return render(request, 'women/addpage.html', {'form': form, 'menu': menu, 'title': 'Добавление статьи'}) # добавил ссылку на класс
 
 def contact(request):
     return HttpResponse('Обратная связь')
@@ -66,4 +69,4 @@ def show_category(request, cat_id):
         'cat_selected': cat_id,
     }
 
-    return render(request, 'women/index.html', context=context) #
+    return render(request, 'women/index.html', context=context)

@@ -1,0 +1,12 @@
+{% extends 'women/base.html' %} <!-- експортирую шаблон страницы по адресу 'women/base.html' -->
+
+{% block content %} <!-- открываю блок для редактирования -->
+<h1>{{ title }}</h1> <!-- заголовок первого уровня, экспортирую из views.py -->
+
+<form action="{% url 'add_page' %}" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Добавить</button>
+</form> <!-- абзац -->
+
+{% endblock %} <!-- закрываю блок -->
