@@ -32,7 +32,18 @@ def about(request):
     return render(request, 'women/about.html', {'menu': menu, 'about': 'О сайте'}) # добавил список в шаблон
 
 def addpage(request):
-    form = AddPostForm() # добавил модель в шаблон addpage
+    if request.method == 'POST':
+        form = AddPostForm(request.POST) # форма с заполненными данными
+        if form.is_valid(): # проверяет корректность данных и передачу на сервер
+            # print(form.cleaned_data) # отображаем в консоли очищенные данные
+            try: #
+                Women.objects.create(**form.cleaned_data) # делаем добавление новой записи в базу данных
+                return redirect('home') # если добавление прошло успешно делаем добавление на главную страницу
+            except: #
+                form.add_error(None, 'Ошибка добавления поста') # если произошла ошибка, отображаем ее на странице формы
+
+    else:
+        form = AddPostForm() # добавил модель в шаблон addpage, формируется пустая форма
     return render(request, 'women/addpage.html', {'form': form, 'menu': menu, 'title': 'Добавление статьи'}) # добавил ссылку на класс
 
 def contact(request):

@@ -3,10 +3,17 @@
 {% block content %} <!-- открываю блок для редактирования -->
 <h1>{{ title }}</h1> <!-- заголовок первого уровня, экспортирую из views.py -->
 
-<form action="{% url 'add_page' %}" method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Добавить</button>
-</form> <!-- абзац -->
+<form action="{% url 'add_page' %}" method="post"> <!-- action - обращается к URL адресу, method - какой используется метод в форме -->
+    {% csrf_token %} <!-- служит для защиты формы от сис эрес атак -->
+
+    <div class="form-error">{{ form.non_field_errors }}</div> <!-- отображаю ошибки не связанные с полями -->
+
+    {% for f in form %} <!-- создал цикл для отображения формы -->
+    <p><label class="form-label" for="{{ f.id_for_label }}">{{ f.label }}: </label>{{ f }}</p>
+    <div class="form-error">{{ f.errors }}</div>
+    {% endfor %}
+
+    <button type="submit">Добавить</button> <!-- создаю кнопку для отправки -->
+</form>
 
 {% endblock %} <!-- закрываю блок -->
