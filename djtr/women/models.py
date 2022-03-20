@@ -38,7 +38,7 @@ class Category(models.Model): # создаю вторую модель Кате�
         return self.name
 
     def get_absolute_url(self):
-        return reverse('category', kwargs={'cat_id': self.pk})
+        return reverse('category', kwargs={'cat_slug': self.slug})
 
     class Meta:
         verbose_name = 'Категорию'
