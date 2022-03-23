@@ -14,12 +14,6 @@ from django.urls import reverse, reverse_lazy # метод для переход
 
 # Create your views here.
 
-menu = [{'title': 'О сайте', 'url_name': 'about'},
-        {'title': 'Добавить статью', 'url_name': 'add_page'},
-        {'title': 'Обратная связь', 'url_name': 'contact'},
-        {'title': 'Войти', 'url_name': 'login'},
-] # добавил список ввиде словарей
-
 class WomenHome(ListView): # наследую атрибуты из класса ListView
     model = Women # атрибут для отображения модели Women
     template_name = 'women/index.html' # атрибут, который указывает путь к шаблону

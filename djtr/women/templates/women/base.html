@@ -45,7 +45,13 @@
 		<li><a href="{% url 'home' %}">Все категории</a></li> <!-- если не выбрали, отображается как ссылка -->
 {% endif %}
 
-{% show_categories 'name' cat_selected %} <!-- знак - определяет обратный порядок -->
+{% for c in cats %} <!-- перебираю коллекцию cats -->
+		{% if c.pk == cat_selected %} <!-- если id  -->
+			<li class="selected">{{c.name}}</li> <!-- -->
+		{% else %} <!-- -->
+			<li><a href="{{ c.get_absolute_url }}">{{c.name}}</a></li> <!-- -->
+		{% endif %} <!-- -->
+{% endfor %} <!-- -->
 
 		<li class="share"> <!-- элемент списка -->
 		<p>Музыка</p> <!-- тег абзаца -->
